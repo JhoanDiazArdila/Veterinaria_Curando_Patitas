@@ -346,6 +346,250 @@ DELIMITER ;
 
 
 
+-- INSERSIONS 
+
+
+INSERT INTO Additional_charges (type, size, multiplier_value) VALUES ('DOG', 'BIG', 1.25);
+INSERT INTO Additional_charges (type, size, multiplier_value) VALUES ('CAT', 'MEDIUM', 1.15);
+INSERT INTO Additional_charges (type, size, multiplier_value) VALUES ('PARROT', 'SMALL', 0.75);
+INSERT INTO Additional_charges (type, size, multiplier_value) VALUES ('TORTOLA', 'MEDIUM', 1.05);
+INSERT INTO Additional_charges (type, size, multiplier_value) VALUES ('SNAKE', 'BIG', 1.35);
+INSERT INTO Additional_charges (type, size, multiplier_value) VALUES ('TURTLE', 'SMALL', 0.95);
+
+INSERT INTO Employees (employ_id, full_name, phone, address, email, digital_finger_print_url, job_position, employee_status, salary) 
+VALUES ('EMP001', 'Juan Pérez', '3001234567', 'Calle 123 #45-67', 'juan.perez@example.com', 'https://example.com/fingerprint/juan', 'VETERINARIAN', 'ACTIVE', 3000.00);
+
+INSERT INTO Employees (employ_id, full_name, phone, address, email, digital_finger_print_url, job_position, employee_status, salary) 
+VALUES ('EMP002', 'Ana Gómez', '3007654321', 'Carrera 12 #34-56', 'ana.gomez@example.com', 'https://example.com/fingerprint/ana', 'RECEPTIONIST', 'VACATIONS', 2000.00);
+
+INSERT INTO Employees (employ_id, full_name, phone, address, email, digital_finger_print_url, job_position, employee_status, salary) 
+VALUES ('EMP003', 'Carlos López', '3001122334', 'Avenida 1 #23-45', 'carlos.lopez@example.com', 'https://example.com/fingerprint/carlos', 'VETERINARY HEAD', 'INACTIVE', 4000.00);
+
+INSERT INTO Owners (owner_id, full_name, address, phone, email, emergency_contact_name, emergency_contact_phone) 
+VALUES ('OWN001', 'Laura Martínez', 'Calle 101 #22-33', '3101234567', 'laura.martinez@example.com', 'Pedro López', '3107654321');
+
+INSERT INTO Owners (owner_id, full_name, address, phone, email, emergency_contact_name, emergency_contact_phone) 
+VALUES ('OWN002', 'Miguel Rodríguez', 'Carrera 45 #67-89', '3102345678', 'miguel.rodriguez@example.com', 'Ana García', '3108765432');
+
+INSERT INTO Owners (owner_id, full_name, address, phone, email, emergency_contact_name, emergency_contact_phone) 
+VALUES ('OWN003', 'Sofía Ramírez', 'Avenida 9 #10-11', '3103456789', 'sofia.ramirez@example.com', 'Carlos Pérez', '3109876543');
+INSERT INTO Pets (owner_id, name, behavior, species, type, breed, age, birthdate, sex, microchip_number, photo_path, weight, size, allergies, medical_conditions) 
+VALUES ('OWN001', 'Rex', 'AGGRESSIVE', 'MAMMAL', 'Dog', 'Labrador', 5, '2019-01-01', 'MALE', 'MICRO123', 'https://example.com/photos/rex.jpg', 25.50, 'BIG', 'None', 'None');
+
+INSERT INTO Pets (owner_id, name, behavior, species, type, breed, age, birthdate, sex, microchip_number, photo_path, weight, size, allergies, medical_conditions) 
+VALUES ('OWN002', 'Mia', 'PASSIVE', 'MAMMAL', 'Cat', 'Siamese', 3, '2021-06-15', 'FEMALE', 'MICRO456', 'https://example.com/photos/mia.jpg', 4.30, 'SMALL', 'Fish allergy', 'Asthma');
+
+INSERT INTO Pets (owner_id, name, behavior, species, type, breed, age, birthdate, sex, microchip_number, photo_path, weight, size, allergies, medical_conditions) 
+VALUES ('OWN003', 'Polly', 'PASSIVE', 'BIRD', 'Parrot', 'Macaw', 2, '2022-03-10', 'FEMALE', 'MICRO789', 'https://example.com/photos/polly.jpg', 1.20, 'SMALL', 'None', 'None');
+
+INSERT INTO Services (service_type, name, description, standar_price) 
+VALUES ('VACCINATION', 'Rabies Vaccine', 'Vaccine for rabies prevention', 50.00);
+
+INSERT INTO Services (service_type, name, description, standar_price) 
+VALUES ('ADDITIONAL_SERVICE', 'Grooming', 'Complete grooming service for pets', 30.00);
+
+INSERT INTO Services (service_type, name, description, standar_price) 
+VALUES ('MEDICAL_CONSULTATIONS', 'General Check-up', 'Routine medical examination', 70.00);
+
+INSERT INTO Services (service_type, name, description, standar_price) 
+VALUES ('SURGICAL_PROCEDURES', 'Spaying/Neutering', 'Surgical sterilization procedure', 150.00);
+
+INSERT INTO Services (service_type, name, description, standar_price) 
+VALUES ('ADOPTIONS', 'Pet Adoption', 'Adoption service for pets', 20.00);
+
+INSERT INTO pet_services_appoinment (service_id, employ_id, pet_id, entry_date_time, exit_date_time, visit_reason, diagnosis, recomendations, prescription_medicines, apoimet_status) 
+VALUES (1, 'EMP001', 1, '2024-12-01 09:00:00', '2024-12-01 10:00:00', 'Routine Check-up', 'Healthy', 'Keep up with regular check-ups', 'None', 'COMPLETED');
+
+INSERT INTO pet_services_appoinment (service_id, employ_id, pet_id, entry_date_time, exit_date_time, visit_reason, diagnosis, recomendations, prescription_medicines, apoimet_status) 
+VALUES (2, 'EMP002', 2, '2024-12-02 11:00:00', '2024-12-02 12:00:00', 'Vaccination', 'N/A', 'Ensure the next dose in one year', 'None', 'SCHEDULED');
+
+INSERT INTO pet_services_appoinment (service_id, employ_id, pet_id, entry_date_time, exit_date_time, visit_reason, diagnosis, recomendations, prescription_medicines, apoimet_status) 
+VALUES (3, 'EMP003', 3, '2024-12-03 13:00:00', '2024-12-03 14:30:00', 'Surgery for spaying', 'Successful', 'Rest and follow prescribed medication', 'Antibiotics', 'COMPLETED');
+
+INSERT INTO Vaccination (service_id, vaccination_type, observation, duration) 
+VALUES (1, 'Rabies', 'Annual booster required', 365);
+
+INSERT INTO Vaccination (service_id, vaccination_type, observation, duration) 
+VALUES (2, 'Distemper', 'Puppy shots', 60);
+
+INSERT INTO Vaccination (service_id, vaccination_type, observation, duration) 
+VALUES (3, 'Parvovirus', 'Adult vaccination', 365);
+
+INSERT INTO Vaccination (service_id, vaccination_type, observation, duration) 
+VALUES (4, 'Bordetella', 'Kennel cough prevention', 180);
+
+INSERT INTO Surgical_Procedures (service_id, preoperative_details, procedure_details, postoperative_follow_up, recovery_estimated_time) 
+VALUES (1, 'Fasting for 12 hours before surgery', 'Removal of tumor', 'Check incision site daily, keep the area clean and dry', '2 weeks');
+
+INSERT INTO Surgical_Procedures (service_id, preoperative_details, procedure_details, postoperative_follow_up, recovery_estimated_time) 
+VALUES (2, 'Blood tests required before surgery', 'Spaying/Neutering procedure', 'Administer prescribed medication, limit activity', '1 week');
+
+INSERT INTO Surgical_Procedures (service_id, preoperative_details, procedure_details, postoperative_follow_up, recovery_estimated_time) 
+VALUES (3, 'Ensure no food or water for 8 hours prior', 'Dental surgery to remove infected teeth', 'Monitor for signs of infection, soft food diet', '3 days');
+
+INSERT INTO Surgical_Procedures (service_id, preoperative_details, procedure_details, postoperative_follow_up, recovery_estimated_time) 
+VALUES (4, 'Complete pre-surgical examination', 'Fracture repair', 'Follow up in 1 week, avoid heavy activities', '4 weeks');
+
+INSERT INTO Inventory (name, item_type, sub_type, manufacturer, lot_number, sell_price, purchase_price, expiration_date, quantity) 
+VALUES ('Antibiotic', 'MEDICATION', 'Cephalosporin', 'Pharma Inc.', 'LOT123', 15.50, 10.00, '2025-12-01', 100);
+
+INSERT INTO Inventory (name, item_type, sub_type, manufacturer, lot_number, sell_price, purchase_price, expiration_date, quantity) 
+VALUES ('Rabies Vaccine', 'VACCINE', 'Rabies', 'VaccineCorp', 'LOT456', 30.00, 25.00, '2026-06-15', 50);
+
+INSERT INTO Inventory (name, item_type, sub_type, manufacturer, lot_number, sell_price, purchase_price, expiration_date, quantity) 
+VALUES ('Syringe', 'MEDICAL_SUPPLY', 'Injection', 'MedSupplies Co.', 'LOT789', 0.50, 0.30, '2027-01-10', 500);
+
+INSERT INTO Inventory (name, item_type, sub_type, manufacturer, lot_number, sell_price, purchase_price, expiration_date, quantity) 
+VALUES ('Pain Reliever', 'MEDICATION', 'NSAID', 'HealthPharma', 'LOT321', 20.00, 12.00, '2025-11-20', 200);
+
+INSERT INTO Items_used_services (item_id, service_id, quantity) 
+VALUES (1, 1, 10);
+
+INSERT INTO Items_used_services (item_id, service_id, quantity) 
+VALUES (2, 2, 5);
+
+INSERT INTO Items_used_services (item_id, service_id, quantity) 
+VALUES (3, 3, 15);
+
+INSERT INTO Items_used_services (item_id, service_id, quantity) 
+VALUES (4, 4, 20);
+
+INSERT INTO Suppliers (supplier_id, company_name, contact_name, email, phone, address) 
+VALUES ('SUP001', 'Pharma Inc.', 'Maria Torres', 'maria.torres@pharmainc.com', '3109876543', 'Avenida Principal #123');
+
+INSERT INTO Suppliers (supplier_id, company_name, contact_name, email, phone, address) 
+VALUES ('SUP002', 'VaccineCorp', 'Luis Rodríguez', 'luis.rodriguez@vaccinecorp.com', '3108765432', 'Calle Secundaria #456');
+
+INSERT INTO Suppliers (supplier_id, company_name, contact_name, email, phone, address) 
+VALUES ('SUP003', 'MedSupplies Co.', 'Ana García', 'ana.garcia@medsuppliesco.com', '3107654321', 'Carrera Terciaria #789');
+
+INSERT INTO Suppliers (supplier_id, company_name, contact_name, email, phone, address) 
+VALUES ('SUP004', 'HealthPharma', 'Carlos Pérez', 'carlos.perez@healthpharma.com', '3106543210', 'Boulevard Central #1011');
+INSERT INTO Supplier_invoices (supplier_id, invoice_date, tax_amount, total_amount) 
+VALUES ('SUP001', '2024-11-01', 500.00, 5500.00);
+
+INSERT INTO Supplier_invoices (supplier_id, invoice_date, tax_amount, total_amount) 
+VALUES ('SUP002', '2024-11-15', 300.00, 3300.00);
+
+INSERT INTO Supplier_invoices (supplier_id, invoice_date, tax_amount, total_amount) 
+VALUES ('SUP003', '2024-12-01', 200.00, 2200.00);
+
+INSERT INTO Supplier_invoices (supplier_id, invoice_date, tax_amount, total_amount) 
+VALUES ('SUP004', '2024-12-10', 450.00, 4950.00);
+INSERT INTO Purchase_items (supplier_invoice_id, item_id, quantity) 
+VALUES (1, 1, 50);
+
+INSERT INTO Purchase_items (supplier_invoice_id, item_id, quantity) 
+VALUES (2, 2, 100);
+
+INSERT INTO Purchase_items (supplier_invoice_id, item_id, quantity) 
+VALUES (3, 3, 200);
+
+INSERT INTO Purchase_items (supplier_invoice_id, item_id, quantity) 
+VALUES (4, 4, 150);
+INSERT INTO Schedule (employ_id, day, entry_time, exit_time) 
+VALUES ('EMP001', 'MONDAY', '08:00:00', '17:00:00');
+
+INSERT INTO Schedule (employ_id, day, entry_time, exit_time) 
+VALUES ('EMP002', 'TUESDAY', '09:00:00', '18:00:00');
+
+INSERT INTO Schedule (employ_id, day, entry_time, exit_time) 
+VALUES ('EMP003', 'WEDNESDAY', '10:00:00', '19:00:00');
+
+
+INSERT INTO Events (name, address, start_time, end_time) 
+VALUES ('Adoption Day', 'Calle 123 #45-67', '2024-12-20 09:00:00', '2024-12-20 17:00:00');
+
+INSERT INTO Events (name, address, start_time, end_time) 
+VALUES ('Pet Vaccination Campaign', 'Parque Central', '2024-12-25 08:00:00', '2024-12-25 15:00:00');
+
+INSERT INTO Events (name, address, start_time, end_time) 
+VALUES ('Fundraising Gala', 'Hotel Luxor', '2024-12-30 19:00:00', '2024-12-30 23:00:00');
+INSERT INTO Medic_team (employ_id, event_id) 
+VALUES ('EMP001', 1);
+
+INSERT INTO Medic_team (employ_id, event_id) 
+VALUES ('EMP002', 2);
+
+INSERT INTO Medic_team (employ_id, event_id) 
+VALUES ('EMP003', 3);
+INSERT INTO Loyalty_Program (owner_id, total_points, membership_level) 
+VALUES ('OWN001', 100, 'BRONZE');
+
+INSERT INTO Loyalty_Program (owner_id, total_points, membership_level) 
+VALUES ('OWN002', 200, 'SILVER');
+
+INSERT INTO Loyalty_Program (owner_id, total_points, membership_level) 
+VALUES ('OWN003', 300, 'GOLD');
+INSERT INTO Owners_notifications (owner_id, subject, notification_date, descripction) 
+VALUES ('OWN001', 'Vaccination Reminder', '2024-12-15', 'Your pet Rex is due for his annual rabies vaccination.');
+
+INSERT INTO Owners_notifications (owner_id, subject, notification_date, descripction) 
+VALUES ('OWN002', 'Appointment Confirmation', '2024-12-10', 'Your appointment for Mia\'s check-up has been confirmed for December 20, 2024.');
+
+INSERT INTO Owners_notifications (owner_id, subject, notification_date, descripction) 
+VALUES ('OWN003', 'Event Invitation', '2024-12-05', 'Join us for our Pet Adoption Day event on December 20, 2024, at Calle 123 #45-67.');
+INSERT INTO Adoptions (appointment_pet_service_id, adoption_date, owner_id, contract_path) 
+VALUES (1, '2024-12-15', 'OWN001', 'https://example.com/contracts/adoption1.pdf');
+
+INSERT INTO Adoptions (appointment_pet_service_id, adoption_date, owner_id, contract_path) 
+VALUES (2, '2024-12-20', 'OWN002', 'https://example.com/contracts/adoption2.pdf');
+
+INSERT INTO Adoptions (appointment_pet_service_id, adoption_date, owner_id, contract_path) 
+VALUES (3, '2024-12-25', 'OWN003', 'https://example.com/contracts/adoption3.pdf');
+INSERT INTO Update_adoptions (appointment_pet_service_id, follow_up_date, follow_up_notes) 
+VALUES (1, '2025-01-15', 'The pet is adapting well to the new home.');
+
+INSERT INTO Update_adoptions (appointment_pet_service_id, follow_up_date, follow_up_notes) 
+VALUES (2, '2025-01-20', 'The pet requires additional medical check-up.');
+
+INSERT INTO Update_adoptions (appointment_pet_service_id, follow_up_date, follow_up_notes) 
+VALUES (3, '2025-01-25', 'The pet and owner are bonding well, no issues reported.');
+INSERT INTO Service_event (event_id, pet_id, service_id, quantity) 
+VALUES (1, 1, 1, 10);
+
+INSERT INTO Service_event (event_id, pet_id, service_id, quantity) 
+VALUES (2, 2, 2, 5);
+
+
+INSERT INTO Company_information (NIT, name, address, phone, email) 
+VALUES ('NIT001', 'VetCare Inc.', 'Calle 123 #45-67', '3101234567', 'contact@vetcare.com');
+
+INSERT INTO Company_information (NIT, name, address, phone, email) 
+VALUES ('NIT002', 'Animal Health Co.', 'Avenida Principal #789', '3107654321', 'info@animalhealth.com');
+
+INSERT INTO Company_information (NIT, name, address, phone, email) 
+VALUES ('NIT003', 'PetWell Services', 'Carrera Secundaria #456', '3109876543', 'support@petwell.com');
+
+INSERT INTO Company_information (NIT, name, address, phone, email) 
+VALUES ('NIT004', 'Paws & Claws Ltd.', 'Boulevard Central #1011', '3106543210', 'hello@pawsandclaws.com');
+INSERT INTO Company_notification (NIT, subject, notification_date_time, descripction) 
+VALUES ('NIT001', 'Maintenance Notice', '2024-12-01 09:00:00', 'Scheduled maintenance on December 5th.');
+
+INSERT INTO Company_notification (NIT, subject, notification_date_time, descripction) 
+VALUES ('NIT002', 'Holiday Hours', '2024-12-10 10:00:00', 'Our offices will be closed on December 25th.');
+
+INSERT INTO Company_notification (NIT, subject, notification_date_time, descripction) 
+VALUES ('NIT003', 'New Services Available', '2024-12-15 11:00:00', 'We are excited to announce new services starting January 2025.');
+
+INSERT INTO Company_notification (NIT, subject, notification_date_time, descripction) 
+VALUES ('NIT004', 'Team Meeting', '2024-12-20 14:00:00', 'Monthly team meeting on December 22nd.');
+INSERT INTO Payment_method (name) 
+VALUES ('Credit Card');
+
+INSERT INTO Payment_method (name) 
+VALUES ('Debit Card');
+
+INSERT INTO Payment_method (name) 
+VALUES ('Cash');
+
+INSERT INTO Payment_method (name) 
+VALUES ('Bank Transfer');
+INSERT INTO Invoices (CUFE, owner_id, NIT, invoice_date, total_amount, tax_amount, digital_stamp, qr_code_path) 
+VALUES ('CUFE001', 'OWN001', 'NIT001', '2024-12-01', 5500.00, 500.00, 'https://example.com/stamps/stamp1.png', 'https://example.com/qrcodes/qr1.png');
+
+INSERT INTO Invoices (CUFE, owner_id, NIT, invoice_date, total_amount, tax_amount, digital_stamp, qr_code_path) 
+VALUES ('CUFE002', 'OWN002', 'NIT002', '2024-12-05', 3300.00, 300.00, 'https://example.com/stamps/stamp2.png', 'https://example.com/qrcodes/qr2.png');
 
 
 
